@@ -1,3 +1,5 @@
+
+
 #!/usr/bin/env node
 
 import minimist from "minimist";
@@ -5,7 +7,6 @@ import minimist from "minimist";
 import { rps } from "../lib/rpsls.js";
 
 const args = minimist(process.argv.slice(2));
-
 
 const help = `Usage: node-rps [SHOT]
 Play Rock Paper Scissors (RPS)
@@ -17,7 +18,6 @@ Examples:
   node-rps rock   Return JSON with results for RPS played against a simulated opponent.
                   e.g {"player":"rock","opponent":"scissors","result":"win"}`;
                   
-//rules for rock paprr scissors 
 const rules = `Rules for Rock Paper Scissors:
 - Scissors CUTS Paper
 - Paper COVERS Rock
@@ -25,23 +25,25 @@ const rules = `Rules for Rock Paper Scissors:
 
 if (args.rules || args.r) {
     console.log(rules);
-    
     process.exit(0);
 }
+
+
 if (args.help || args.h) {
     console.log(help);
     process.exit(0);
 }
+
+
 let shot = args._[0];
+
+
 try {
-
-
     console.log(JSON.stringify(rps(shot)));
+} 
 
-
-} catch (error){
+catch (error){
     console.log(help);
     console.log(rules);
-
     process.exit(1);
 }
