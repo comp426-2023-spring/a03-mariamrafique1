@@ -21,7 +21,7 @@ function help() {
 }
 //rock-paper-scissor 
 //game rules
-function help() {
+function rules() {
     console.log(
         `Rules for Rock Paper Scissors:
         - Scissors CUTS Paper
@@ -38,11 +38,11 @@ for(let i = 0; i < args.length; i++) {
     switch(args[i]) {
         case "-h":
         case "--help":
-            print_usage()
+            help()
             process.exit(0) 
         case "-r":
         case "--rules":
-            help()
+            rules()
             process.exit(0)
     }
 }
@@ -53,8 +53,8 @@ if(args.length > 0) {
 
 let result = rps(player)
 if(result == null) {
-    print_usage()
     help()
+    rules()
 } else {
     console.log(JSON.stringify(result))
 }
