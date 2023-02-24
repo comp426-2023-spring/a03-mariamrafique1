@@ -5,6 +5,7 @@ import { rps } from "../lib/rpsls.js"
 //provide option for help
 //rules
 function help() {
+   
     console.log(
         `Usage: node-rps [SHOT]
         Play Rock Paper Scissors (RPS)
@@ -22,6 +23,7 @@ function help() {
 //rock-paper-scissor 
 //game rules
 function rules() {
+   
     console.log(
         `Rules for Rock Paper Scissors:
         - Scissors CUTS Paper
@@ -35,12 +37,15 @@ let mainPlayer = null
 
 
 for(let i = 0; i < args.length; i++) {
+    
     switch(args[i]) {
         case "-h":
+        
         case "--help":
             help()
             process.exit(0) 
         case "-r":
+        
         case "--rules":
             rules()
             process.exit(0)
@@ -56,10 +61,13 @@ let result = rps(mainPlayer)
 //null 
 if(result == null) {
     
+   
     help()
+    
     rules()
 
 
 } else {
+   
     console.log(JSON.stringify(result))
 }

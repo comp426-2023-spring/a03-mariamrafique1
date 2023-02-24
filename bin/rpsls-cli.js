@@ -2,7 +2,7 @@
 
 import { rpsls } from "../lib/rpsls.js"
 
-function print_usage() {
+function help() {
     console.log(
         `Usage: node-rpsls [SHOT]
         Play the Lizard-Spock Expansion of Rock Paper Scissors (RPSLS)!
@@ -18,7 +18,7 @@ function print_usage() {
     )
 }
 
-function print_rules() {
+function rules() {
     console.log(
         `Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
         - Scissors CUTS Paper
@@ -42,11 +42,11 @@ for(let i = 0; i < args.length; i++) {
     switch(args[i]) {
         case "-h":
         case "--help":
-            print_usage()
+            help()
             process.exit(0) 
         case "-r":
         case "--rules":
-            print_rules()
+            rules()
             process.exit(0)
     }
 }
@@ -57,8 +57,8 @@ if(args.length > 0) {
 
 let result = rpsls(player)
 if(result == null) {
-    print_usage()
-    print_rules()
+    help()
+    rules()
 } else {
     console.log(JSON.stringify(result))
 }
