@@ -2,6 +2,11 @@
 
 import { rpsls } from "../lib/rpsls.js"
 
+//for rock paper scissor
+//lizard and spock verios
+//prive help center
+
+
 function help() {
     console.log(
         `Usage: node-rpsls [SHOT]
@@ -17,6 +22,8 @@ function help() {
                             e.g {"player":"rock","opponent":"Spock","result":"lose"}`
     )
 }
+
+//rules for this game verison
 
 function rules() {
     console.log(
@@ -37,7 +44,9 @@ function rules() {
 
 const [,, ...args] = process.argv
 
-let player = null
+let mainPlayer = null
+//error handling
+//s
 for(let i = 0; i < args.length; i++) {
     switch(args[i]) {
         case "-h":
@@ -52,10 +61,10 @@ for(let i = 0; i < args.length; i++) {
 }
 
 if(args.length > 0) {
-    player = args[0]
+    mainPlayer = args[0]
 }
 
-let result = rpsls(player)
+let result = rpsls(mainPlayer)
 if(result == null) {
     help()
     rules()
