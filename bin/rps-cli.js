@@ -1,8 +1,10 @@
 #!/usr/bin/env node
-
 import { rps } from "../lib/rpsls.js"
 
-function print_usage() {
+//print message 
+//provide option for help
+//rules
+function help() {
     console.log(
         `Usage: node-rps [SHOT]
         Play Rock Paper Scissors (RPS)
@@ -17,7 +19,9 @@ function print_usage() {
                           e.g {"player":"rock","opponent":"scissors","result":"win"}`
     )
 }
-function print_rules() {
+//rock-paper-scissor 
+//game rules
+function help() {
     console.log(
         `Rules for Rock Paper Scissors:
         - Scissors CUTS Paper
@@ -38,7 +42,7 @@ for(let i = 0; i < args.length; i++) {
             process.exit(0) 
         case "-r":
         case "--rules":
-            print_rules()
+            help()
             process.exit(0)
     }
 }
@@ -50,7 +54,7 @@ if(args.length > 0) {
 let result = rps(player)
 if(result == null) {
     print_usage()
-    print_rules()
+    help()
 } else {
     console.log(JSON.stringify(result))
 }
