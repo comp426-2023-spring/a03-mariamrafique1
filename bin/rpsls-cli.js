@@ -3,7 +3,7 @@
 import minimist from "minimist";
 import { rpsls } from "../lib/rpsls.js";
 
-const argument = minimist(process.argv.slice(2));
+const args = minimist(process.argv.slice(2));
 //
 //rock 
 //paper
@@ -34,15 +34,15 @@ const rules = `Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
 - Spock VAPORIZES Rock
 - Rock CRUSHES Scissors`;
 
-if (argument.rules || argument.r) {
+if (args.rules || args.r) {
     console.log(rules);
     process.exit(0);
 }
-if (argument.help || argument.h) {
+if (args.help || args.h) {
     console.log(help);
     process.exit(0);
 }
-let shot = argument._[0];
+let shot = args._[0];
 try {
     console.log(JSON.stringify(rpsls(shot)));
 } catch (error){
