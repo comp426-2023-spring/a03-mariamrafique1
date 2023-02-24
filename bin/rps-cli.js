@@ -31,7 +31,7 @@ function rules() {
 }
 const [,, ...args] = process.argv
 
-let player = null
+let mainPlayer = null
 
 
 for(let i = 0; i < args.length; i++) {
@@ -48,13 +48,18 @@ for(let i = 0; i < args.length; i++) {
 }
 
 if(args.length > 0) {
-    player = args[0]
+   
+    mainPlayer = args[0]
 }
 
-let result = rps(player)
+let result = rps(mainPlayer)
+//null 
 if(result == null) {
+    
     help()
     rules()
+
+
 } else {
     console.log(JSON.stringify(result))
 }
